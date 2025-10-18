@@ -40,13 +40,12 @@ body {
     transition: background-color 0.3s, color 0.3s;
     overflow: hidden;
     touch-action: pan-y;
-    height: 100vh;
 }
 
 #root {
     position: absolute;
     inset: 0;
-    height: 100%;
+    height: 100vh;
 }
 
 footer {
@@ -61,14 +60,11 @@ footer {
 .page {
     display: none;
     position: relative;
-    height: 100%;
 }
 
 #home.active {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    padding: 20px;
 }
 
 #home h1 {
@@ -108,8 +104,6 @@ footer {
 #test.active {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    padding: 20px;
 }
 
 #test nav {
