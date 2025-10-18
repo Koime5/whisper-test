@@ -113,7 +113,7 @@ footer {
     justify-content: space-between;
     color: var(--text-primary);
     font-size: 16px;
-    padding: 20px;
+    padding: 20px 20px 0;
 }
 
 #test nav p {
@@ -194,7 +194,7 @@ footer {
     justify-content: center;
     margin-top: 30px;
     position: absolute;
-    bottom: 80px;
+    bottom: 60px;
     left: 0;
     right: 0;
 }
@@ -260,7 +260,7 @@ footer {
 }
 
 #results .btn-container {
-    bottom: 100px;
+    bottom: 80px;
 }
 
 #history.active {
@@ -281,7 +281,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-height: 70vh;
+    max-height: 60vh;
     -ms-overflow-style: none;
     /* Internet Explorer and Edge */
     scrollbar-width: none;
