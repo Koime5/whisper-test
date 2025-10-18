@@ -61,14 +61,14 @@ footer {
 .page {
     display: none;
     position: relative;
-    height: 100vh;
+    height: 100%;
 }
 
 #home.active {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    margin: 20px;
+    padding: 20px;
 }
 
 #home h1 {
@@ -109,7 +109,7 @@ footer {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    margin: 20px;
+    padding: 20px;
 }
 
 #test nav {
