@@ -1,0 +1,21 @@
+{
+  "name": "Whisper Test Assistant",
+  "short_name": "Whisper Test",
+  "description": "A progressive web app for the Whisper Test.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#64b5f6",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        (function () {
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+            if (prefersDarkScheme.matches) {
+                document.documentElement.classList.add('dark');
+            }
+            prefersDarkScheme.addEventListener("change", e => {
+                if (e.matches) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Whisper Test</title>
+</head>
+
+<body id="root">
+    <section id="home" class="page active">
+        <h1>Whisper Test Assistant</h1>
+        <div class="btn-container">
+            <button onclick="navigateTo('test')" class="btn primary mt-30">
+                Start
+            </button>
+            <button onclick="navigateTo('history')" class="btn secondary">
+                History
+            </button>
+        </div>
+    </section>
+    <section id="test" class="page">
+        <nav>
+            <p onclick="confirmBackToHome()">Back to Home</p>
+            <p onclick="confirmResetTest()">Reset Test</p>
+        </nav>
+        <h1 id="pairedWord"></h1>
+        <div class="scoreBoard">
+            <div class="score">
+                <p>Incorrect</p>
+                <p id="incorrectScore"></p>
+            </div>
+            <div class="score">
+                <p>Correct</p>
+                <p id="correctScore"></p>
+            </div>
+        </div>
+        <button onclick="refreshPairedWord()" class="secondary refresh-btn">Refresh Paired Word</button>
+        <div class="responseContainer">
+            <button onclick="response(false)" class="response-btn incorrect">
+                Incorrect
+            </button>
+            <button onclick="response(true)" class="response-btn correct">
+                Correct
+            </button>
+        </div>
+        <div class="pagination" id="pagination"></div>
+    </section>
+    <section id="results" class="page">
+        <h1>Results</h1>
+        <p id="finalScore">1/6</p>
+        <ul>
+            <li><p>က ၁</p><p class="green">✅</p></li>
+            <li><p>ည ၇</p><p class="red">❌</p></li>
+            <li><p>က ၁</p><p class="green">✅</p></li>
+            <li><p>ည ၇</p><p class="red">✅</p></li>
+            <li><p>က ၁</p><p class="green">✅</p></li>
+            <li><p>ည ၇</p><p class="red">❌</p></li>
+        </ul>
+        <div class="btn-container">
+            <button onclick="navigateTo('test')" class="btn primary mt-30">
+                Start New Test
+            </button>
+            <button onclick="navigateTo('home')" class="btn secondary">
+                Back to Home
+            </button>
+        </div>
+    </section>
+    <section id="history" class="page">
+        <h1>Test History</h1>
+        <ul id="historyList"></ul>
+
+        <div class="btn-container">
+            <button onclick="navigateTo('home')" class="btn secondary">
+                Back to Home
+            </button>
+        </div>
+    </section>
+    <div id="confirmModal" class="modal hidden">
+        <div class="modal-content">
+            <p id="confirmMessage">Are you sure?</p>
+            <div class="modal-actions">
+                <button id="confirmNo" class="btn secondary small">No</button>
+                <button id="confirmYes" class="btn danger small">Yes</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="app.js"></script>
+<script>
+    // =================== PWA Service Worker Registration ===================
+
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch((error) => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        });
+    }
+
+</script>
+<footer>
+    <p>@ 2025</p>
+</footer>
+
+</html>
