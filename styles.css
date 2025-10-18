@@ -46,7 +46,6 @@ body {
 #root {
     position: absolute;
     inset: 0;
-    height: 100%;
 }
 
 footer {
@@ -81,7 +80,7 @@ footer {
     flex-direction: column;
     position: absolute;
     right: 0;
-    bottom: 180px;
+    bottom: 160px;
     left: 0;
 }
 
@@ -113,6 +112,7 @@ footer {
     justify-content: space-between;
     color: var(--text-primary);
     font-size: 16px;
+    padding: 20px;
 }
 
 #test nav p {
@@ -193,7 +193,7 @@ footer {
     justify-content: center;
     margin-top: 30px;
     position: absolute;
-    bottom: 100px;
+    bottom: 80px;
     left: 0;
     right: 0;
 }
@@ -259,7 +259,7 @@ footer {
 }
 
 #results .btn-container {
-    bottom: 120px;
+    bottom: 100px;
 }
 
 #history.active {
